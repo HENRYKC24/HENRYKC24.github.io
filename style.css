@@ -5,11 +5,13 @@ body {
   background-attachment: fixed;
 }
 #top-text {
+  background-color: black;
   color: white;
   text-align: center;
   margin: 0px;
 }
 #app {
+  position: relative;
   max-width: 350px;
   margin: auto;
   border: 2px solid black;
@@ -18,6 +20,16 @@ body {
   rgb(7, 6, 7), rgb(38, 38, 43));
   background-size: 100% 100%;
   /* text-align: center; */
+}
+#freeze {
+  position: sticky;
+  top: 0px;
+  z-index: 4;
+}
+#tabs {
+  position: sticky;
+  top: 273px;
+  z-index: 4;
 }
 #middle-head {
   margin: 0px;
@@ -38,6 +50,7 @@ body {
   text-align: center;
   margin-top: 0;
   padding-top: 2px;
+  border-bottom: 10px solid rgb(32, 29, 29);
 }
 input, select {
   display: inline-block;
@@ -58,6 +71,9 @@ input {
   margin-right: 0px;
   font-size: 25px;
   background-color: rgb(236, 204, 161);
+}
+#form-page span, #form-page p {
+  color: rgb(202, 29, 29);
 }
 div {
   margin-top: 10px;
@@ -85,13 +101,16 @@ sup {
 }
 /*second page*/
 #tabs {
+  display: flex;
+  flex-direction: row;
   width: 100%;
   margin: 0px;
-  margin-left: 0px;
+  /* margin-left: 0px; */
   margin-top: -1px;
   padding: 0px;
 }
 #second-page {
+  position: relative;
   box-sizing: border-box;
   border: 2px solid black;
   border-width: 0px 1px 1px 1px;
@@ -103,7 +122,7 @@ sup {
 
 #mild-tab-btn, #severe-tab-btn, #home-tab-btn {
   display: inline-block;
-  margin: -2px;
+  margin-top: -2px;
   color: white;
   border: 2px solid black;
   font-size: small;

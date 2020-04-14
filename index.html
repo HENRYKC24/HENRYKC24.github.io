@@ -12,23 +12,27 @@
 </head>
 <body>
   <main id="app">
-    <header>
-      <h3 id="top-text">BUILT FOR SUSTAINABLE DEVELOPMENT GOALS(SDG)</h3>
-    </header>
+    <div id="freeze">
+      <header>
+        <h3 id="top-text">BUILT FOR SUSTAINABLE DEVELOPMENT GOALS(SDG)</h3>
+      </header>
 
-    <section id="header">
-      <h2 id="header-text">COVID-19 IMPACT ESTIMATOR</h2>
-      <h3 id="middle-head"><span id="heading-text-middle">Public Health,
-         The Economy, The Workforce, Religion, Everything is in disarray...
-         <br />STAY AT HOME!</span></h3>
-      <h3>WE CAN ESTIMATE THE FUTURE IMPACT OF THIS PANDEMIC</h3>
-    </section>
+      <section id="header">
+        <h2 id="header-text">COVID-19 IMPACT ESTIMATOR</h2>
+        <h3 id="middle-head"><span id="heading-text-middle">Public Health,
+           The Economy, The Workforce, Religion, Everything is in disarray...
+           <br />STAY AT HOME!</span></h3>
+        <h3>WE CAN ESTIMATE THE FUTURE IMPACT OF THIS PANDEMIC</h3>
+      </section>
+    </div>
     
     <section id="form-page">
+      <!-- <section id="valdn-msg"></section> -->
       <form action="">
         <div>
           <label for="country">Country/Region:</label>
           <span><sup>*</sup></span>
+          <span id="country-valdn-msg"></span>
           <input id="country" type="text" required />
         </div>
         <div>
@@ -41,6 +45,7 @@
         </div>
         <div>
           <label id="label1" for="avg-daily-inc-pop">Population % Earning </label>
+          <span id="percent-valdn-msg"></span>
           <input id="avg-daily-inc-pop" type="number" min="1" max="100" />
         </div>
         <div>
@@ -54,6 +59,7 @@
         <div>
           <label for="reported-cases">Reported Cases:</label>
           <span><sup>*</sup></span>
+          <span id="cases-valdn-msg"></span>
           <input id="reported-cases" type="number" data-reported-cases required />
         </div>
         <div>
@@ -67,13 +73,18 @@
         <div>
           <label id="label" for="unit-val"></label>
           <span><sup>*</sup></span>
+          <span id="unit-valdn-msg"></span>
           <input id="unit-val" type="number" data-time-to-elapse required />
         </div>
-        
+        <p id="msg-down"></p>
         <div>
           <input id="submit" type="submit" data-go-estimate value="RUN ESTIMATION" />
         </div>
       </form>
+      <a id="link1" href="#country"><input type="hidden" /></a>
+      <a id="link2" href="#avg-daily-inc-pop"><input type="hidden" /></a>
+      <!-- <a id="" href=""><input type="hidden" /></a> -->
+      <!-- <a id="" href=""><input type="hidden" /></a> -->
     </section>
 
 
@@ -87,34 +98,34 @@
         <h2>ESTIMATED CASE SCENARIOS IN <span id="mre"></span></h2>
         <p>Reported Cases Today: <br /><span id="mrc"></span></p>
         <hr />
-        <p>Estimated Infected Persons Today: <br /><span id="mci"></span></p>
+        <p>Infected Persons Today: <br /><span id="mci"></span></p>
         <hr />
 
-        <p>Estimated Infected Persons in <span class="pre"></span>
+        <p>Infected Persons in <span class="pre"></span>
           <br /><span id="meip"></span></p>
         <hr />
 
-        <p>Estimated severelly Infected Persons in <span class="pre"></span>
+        <p>Severelly Infected Persons in <span class="pre"></span>
           <br /><span id="mesip"></span></p>
         <hr />
 
-        <p>Estimated Available Hospital beds in <span class="pre"></span>
+        <p>Hospital beds in <span class="pre"></span>
           <br /><span id="meahb"></span></p>
         <hr />
 
-        <p>Estimated Infected Persons needing Intensive Care in <span class="pre"></span>
+        <p>Infected Persons needing Intensive Care in <span class="pre"></span>
           <br /><span id="meipicu"></span></p>
         <hr />
 
-        <p>Estimated Infected Persons needing ventilators in <span class="pre"></span>
+        <p>Infected Persons needing ventilators in <span class="pre"></span>
           <br /><span id="meipv"></span></p>
         <hr />
 
-        <p>Estimated Economic loss (Daily) in USD over <span class="pre"></span>
+        <p>Economic loss (Daily) in USD over <span class="pre"></span>
           <br /><span id="meedl"></span></p>
         <hr />
 
-        <p>Estimated Total Economic loss in <span class="pre"></span>
+        <p>Total Economic loss in <span class="pre"></span>
           <br /><span id="metel"></span></p>
       </section>
 
@@ -122,34 +133,34 @@
         <h2>ESTIMATED CASE SCENARIOS IN <span id="sre"></span></h2>
         <p>Reported Cases Today: <br /><span id="src"></span></p>
         <hr />
-        <p>Estimated Infected Persons Today: <br /><span id="sci"></span></p>
+        <p>Infected Persons Today: <br /><span id="sci"></span></p>
         <hr />
 
-        <p>Estimated Infected Persons in <span class="pre"></span>
+        <p>Infected Persons in <span class="pre"></span>
           <br /><span id="seip"></span></p>
         <hr />
 
-        <p>Estimated severelly Infected Persons in <span class="pre"></span>
+        <p>Severelly Infected Persons in <span class="pre"></span>
           <br /><span id="sesip"></span></p>
         <hr />
 
-        <p>Estimated Available Hospital beds in <span class="pre"></span>
+        <p>Available Hospital beds in <span class="pre"></span>
           <br /><span id="seahb"></span></p>
         <hr />
 
-        <p>Estimated Infected Persons needing Intensive Care in <span class="pre"></span>
+        <p>Infected Persons needing Intensive Care in <span class="pre"></span>
           <br /><span id="seipicu"></span></p>
         <hr />
 
-        <p>Estimated Infected Persons needing ventilators in <span class="pre"></span>
+        <p>Infected Persons needing ventilators in <span class="pre"></span>
           <br /><span id="seipv"></span></p>
         <hr />
 
-        <p>Estimated Economic loss (Daily) in USD over <span class="pre"></span>
+        <p>Economic loss (Daily) in USD over <span class="pre"></span>
           <br /><span id="seedl"></span></p>
         <hr />
 
-        <p>Estimated Total Economic loss in <span class="pre"></span>
+        <p>Total Economic loss in <span class="pre"></span>
           <br /><span id="setel"></span></p>
       </section>
       <section id="advice">

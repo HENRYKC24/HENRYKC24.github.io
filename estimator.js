@@ -205,6 +205,70 @@ const covid19ImpactEstimator = (data) => {
 
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
+  const reqValues = [country.value, reportedCases.value, estimationValue.value, avgDIP.value];
+  let error = false, index = 0;
+  for (let i = 0; i < reqValues.length - 1; i++) {
+    let text = '', value = reqValues[i];
+    if (value === '') {
+      error = true;
+    }
+    for (let i = 0; i < value.length; i++) {
+      let char = value[i];
+      if (char !== ' ') {
+        text += char;
+      }
+    };
+    if (text === '') {
+      error = true;
+    }
+    if (error) {
+      index = i + 1;
+      break;
+    }
+  };
+  if (error) {
+    if (index === 1) {
+      let country = document.querySelector('#country-valdn-msg');
+      country.textContent = 'required';
+      let downMsg = document.querySelector('#msg-down');
+      downMsg.textContent = 'Country/Region field is required';
+      // console.log(downMsg);
+      document.querySelector('body').scrollTop = -500;
+      setTimeout(() => {
+        country.textContent = '';
+        downMsg.textContent = '';
+        document.querySelector('#country').focus();
+      }, 3000);
+      return;
+    }
+    if (index === 2) {
+      let cases = document.querySelector('#cases-valdn-msg');
+      cases.textContent = 'required';
+      setTimeout(() => {
+        cases.textContent = '';
+        document.querySelector('#reported-cases').focus();
+      }, 3000);
+      return;
+    }
+    if (index === 3) {
+      let unitValue = document.querySelector('#unit-valdn-msg');
+      let unit = document.querySelector('#est-unit').value;
+      unitValue.textContent = 'required';
+      setTimeout(() => {
+        unitValue.textContent = '';
+        document.querySelector('#unit-val').focus();
+      }, 3000);
+    }
+    return;
+  } else if (Number(reqValues[3]) < 0 || Number(reqValues[3]) > 100) {
+    let downMsg = document.querySelector('#msg-down');
+    downMsg.textContent = 'Population percetage value should be between 0 and 100';
+    setTimeout(() => {
+      downMsg.textContent = '';
+      document.querySelector('#avg-daily-inc-pop').focus();
+    }, 3000);
+    return;
+  }
   // return false;
   inputData = collectData();
   outputData = covid19ImpactEstimator(inputData),
@@ -220,16 +284,28 @@ submitBtn.addEventListener('click', (e) => {
   mesip.textContent = outputData.impact.severeCasesByRequestedTime,
   meahb.textContent = outputData.impact.hospitalBedsByRequestedTime,
   meipicu.textContent = outputData.impact.casesForICUByRequestedTime,
-  meipv.textContent = outputData.impact.casesForVentilatorsByRequestedTime,
-  meedl.textContent = outputData.impact.dollarsInFlight,
-  metel.textContent = outputData.impact.dollarsInFlight * takeWholeNum(inDays(inputData.periodType, inputData.timeToElapse)),
+  meipv.textContent = outputData.impact.casesForVentilatorsByRequestedTime;
+  const mDollars = inputData.region.avgDailyIncomeInUSD;
+  if (mDollars) {
+    meedl.textContent = outputData.impact.dollarsInFlight;
+    metel.textContent = outputData.impact.dollarsInFlight * takeWholeNum(inDays(inputData.periodType, inputData.timeToElapse));
+  } else {
+    meedl.textContent = 'You did not provide the input';
+    metel.textContent = 'You did not provide the input';
+  };
   seip.textContent = outputData.severeImpact.infectionsByRequestedTime,
   sesip.textContent = outputData.severeImpact.severeCasesByRequestedTime,
   seahb.textContent = outputData.severeImpact.hospitalBedsByRequestedTime,
   seipicu.textContent = outputData.severeImpact.casesForICUByRequestedTime,
-  seipv.textContent = outputData.severeImpact.casesForVentilatorsByRequestedTime,
-  seedl.textContent = outputData.severeImpact.dollarsInFlight,
-  setel.textContent = outputData.severeImpact.dollarsInFlight * takeWholeNum(inDays(inputData.periodType, inputData.timeToElapse)),
+  seipv.textContent = outputData.severeImpact.casesForVentilatorsByRequestedTime;
+  const sDollars = inputData.region.avgDailyIncomeInUSD;
+  if (sDollars) {
+    seedl.textContent = outputData.severeImpact.dollarsInFlight;
+    setel.textContent = outputData.severeImpact.dollarsInFlight * takeWholeNum(inDays(inputData.periodType, inputData.timeToElapse));
+  } else {
+    seedl.textContent = 'You did not provide the input';
+    setel.textContent = 'You did not provide the input';
+  };
   sregion.textContent = inputData.region.name.toUpperCase(),
   src.textContent = inputData.reportedCases,
   sci.textContent = outputData.severeImpact.currentlyInfected;
