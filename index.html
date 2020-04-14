@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="The impact assessment of the novel COVID-19 in Africa" />
+    <meta name="author" content="Henry Kelechukwu Eze" />
+    <meta name="keywords" content="covid 19, coronavirus, corona virus, virus, virology, disease,\
+        pandemic, epidemism, estimate, estimation, forecast" />
+    <title>COVID-19 ESTIMATOR</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app">
+    <header>
+      <h3 id="top-text">BUILT FOR SUSTAINABLE DEVELOPMENT GOALS(SDG)</h3>
+    </header>
+
+    <section id="header">
+      <h2 id="header-text">COVID-19 IMPACT ESTIMATOR</h2>
+      <h3 id="middle-head"><span id="heading-text-middle">Public Health, The Economy, The Workforce, Religion, Everything is in disarray...<br />STAY AT HOME!</span></h3>
+      <h3>WE CAN ESTIMATE THE FUTURE IMPACT OF THIS PANDEMIC</h3>
+    </section>
+    
+    <section id="form-page">
+      <form action="">
+        <div>
+          <label for="country">Country/Region:</label>
+          <span><sup>*</sup></span>
+          <input id="country" type="text" required />
+        </div>
+        <div>
+          <label for="pop">Population:</label>
+          <input id="pop" type="number" data-population />
+        </div>
+        <div>
+          <label for="avg-daily-inc-usd">Average Daily Income(USD) Per Citizen:</label>
+          <input id="avg-daily-inc-usd" type="number" />
+        </div>
+        <div>
+          <label id="label1" for="avg-daily-inc-pop">Population % Earning </label>
+          <input id="avg-daily-inc-pop" type="number" min="1" max="100" />
+        </div>
+        <div>
+          <label for="avg-age">Average Age:</label>
+          <input id="avg-age" type="number" />
+        </div>
+        <div>
+          <label for="hosp-beds">Total Hospital Beds:</label>
+          <input id="hosp-beds" type="number" data-total-hospital-beds />
+        </div>
+        <div>
+          <label for="reported-cases">Reported Cases:</label>
+          <span><sup>*</sup></span>
+          <input id="reported-cases" type="number" data-reported-cases required />
+        </div>
+        <div>
+          <label for="est-unit">Choose An Estimation Unit:</label>
+          <select name="est-unit" id="est-unit" data-period-type>
+            <option value="days">Days</option>
+            <option value="weeks">Weeks</option>
+            <option value="months">Months</option>
+          </select>
+        </div>
+        <div>
+          <label id="label" for="unit-val"></label>
+          <span><sup>*</sup></span>
+          <input id="unit-val" type="number" data-time-to-elapse required />
+        </div>
+        
+        <div>
+          <input id="submit" type="submit" data-go-estimate value="RUN ESTIMATION" />
+        </div>
+      </form>
+    </section>
+
+
+    <section id="second-page">
+      <div id="tabs">
+        <div id="mild-tab-btn">MILD IMPACT</div>
+        <div id="severe-tab-btn">SEVERE IMPACT</div>
+        <div id="home-tab-btn">BACK TO FORM</div>
+      </div>
+      <section id="mild-result">
+        <h2>ESTIMATED CASE SCENARIOS IN <span id="re"></span></h2>
+        <p>Reported Cases Today: <br /><span id="rc"></span></p>
+        <hr />
+        <p>Estimated Infected Persons Today: <br /><span id="ci"></span></p>
+        <hr />
+
+        <p>Estimated Infected Persons in <span class="pre"></span><br /><span id="eip"></span></p>
+        <hr />
+
+        <p>Estimated severelly Infected Persons in <span class="pre"></span><br /><span id="esip"></span></p>
+        <hr />
+
+        <p>Estimated Available Hospital beds in <span class="pre"></span><br /><span id="eahb"></span></p>
+        <hr />
+
+        <p>Estimated Infected Persons needing Intensive Care in <span class="pre"></span><br /><span id="eipicu"></span></p>
+        <hr />
+
+        <p>Estimated Infected Persons needing ventilators in <span class="pre"></span><br /><span id="eipv"></span></p>
+        <hr />
+
+        <p>Estimated Economic loss (Daily) in USD over <span class="pre"></span><br /><span id="eedl"></span></p>
+        <hr />
+
+        <p>Estimated Total Economic loss in <span class="pre"></span><br /><span id="etel"></span></p>
+      </section>
+
+      <section id="severe-result">
+        <h2>ESTIMATED CASE SCENARIOS IN <span id="re"></span></h2>
+        <p>Reported Cases Today: <br /><span id="rc"></span></p>
+        <hr />
+        <p>Estimated Infected Persons Today: <br /><span id="ci"></span></p>
+        <hr />
+
+        <p>Estimated Infected Persons in <span class="pre"></span><br /><span id="eip"></span></p>
+        <hr />
+
+        <p>Estimated severelly Infected Persons in <span class="pre"></span><br /><span id="esip"></span></p>
+        <hr />
+
+        <p>Estimated Available Hospital beds in <span class="pre"></span><br /><span id="eahb"></span></p>
+        <hr />
+
+        <p>Estimated Infected Persons needing Intensive Care in <span class="pre"></span><br /><span id="eipicu"></span></p>
+        <hr />
+
+        <p>Estimated Infected Persons needing ventilators in <span class="pre"></span><br /><span id="eipv"></span></p>
+        <hr />
+
+        <p>Estimated Economic loss (Daily) in USD over <span class="pre"></span><br /><span id="eedl"></span></p>
+        <hr />
+
+        <p>Estimated Total Economic loss in <span class="pre"></span><br /><span id="etel"></span></p>
+      </section>
+      <section id="advice">
+        <h1>ADVICE</h1>
+        <p><strong>Note: </strong>Before you <strong>believe</strong> and
+           <strong>share</strong> the <strong>unfounded 5G Network conspiracy theory</strong>
+            to others, why not make a <strong>research</strong> today.</p>
+        <p>However, the estimation above can only be true if we do not take the precautions below. 
+          Most people who become infected 
+          experience mild illness and recover, but it can be more severe for others. 
+          Take care of your health and protect others by doing the following:</p>
+        <ol>
+          <li><strong>Wash your hands frequently:</strong><br />
+            Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.
+            
+            <strong><br /><strong>Why?</strong></strong> Washing your hands with soap and water or using alcohol-based hand rub kills viruses that may be on your hands
+          </li>
+          <li><strong>Maintain social distancing:</strong><br />
+            Maintain at least 1 metre (3 feet) distance between yourself and anyone who is coughing or sneezing.
+            
+            <br /><strong>Why?</strong> When someone coughs or sneezes they spray small liquid droplets from their nose or mouth which may contain virus. If you are too close, you can breathe in the droplets, including the COVID-19 virus if the person coughing has the disease.</li>
+          <li>Avoid touching eyes, nose and mouth
+            <br /><strong>Why?</strong> Hands touch many surfaces and can pick up viruses. Once contaminated, hands can transfer the virus to your eyes, nose or mouth. From there, the virus can enter your body and can make you sick.</li>
+          <li><strong>Practice respiratory hygiene:</strong><br />
+            Make sure you, and the people around you, follow good respiratory hygiene. This means covering your mouth and nose with your bent elbow or tissue when you cough or sneeze. Then dispose of the used tissue immediately.
+            
+            <br /><strong>Why?</strong> Droplets spread virus. By following good respiratory hygiene you protect the people around you from viruses such as cold, flu and COVID-19.</li>
+          <li>If you have fever, cough and difficulty breathing, seek medical care early
+            Stay home if you feel unwell. If you have a fever, cough and difficulty breathing, seek medical attention and call in advance. Follow the directions of your local health authority.
+            
+            <br /><strong>Why?</strong> National and local authorities will have the most up to date information on the situation in your area. Calling in advance will allow your health care provider to quickly direct you to the right health facility. This will also protect you and help prevent spread of viruses and other infections.</li>
+          <li>Stay informed and follow advice given by your healthcare provider
+            Stay informed on the latest developments about COVID-19. Follow advice given by your healthcare provider, your national and local public health authority or your employer on how to protect yourself and others from COVID-19.
+            
+            <br /><strong>Why?</strong> National and local authorities will have the most up to date information on whether COVID-19 is spreading in your area. They are best placed to advise on what people in your area should be doing to protect themselves.</li>
+        </ol>
+      </section>
+    </section>
+    <section id="contact">
+      <p><span id="u">Contact</span><br />PHONE: 0803 262 1842(also on WhatsApp) <br />EMAIL: henrykc24@yahoo.com</p>
+    </section>
+    <footer id="footer">&copy;2020 KCSoftSolutions. All rights reserved.</footer>
+  </main>
+  <script src="estimator.js"></script>
+</body>
+</html>

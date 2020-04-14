@@ -1,0 +1,156 @@
+body {
+  background-image: url(media/coro.webp);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+#top-text {
+  color: white;
+  text-align: center;
+  margin: 0px;
+}
+#app {
+  max-width: 350px;
+  margin: auto;
+  border: 2px solid black;
+  padding: 4px;
+  background-image: linear-gradient(to bottom right,
+  rgb(7, 6, 7), rgb(38, 38, 43));
+  background-size: 100% 100%;
+  /* text-align: center; */
+}
+#middle-head {
+  margin: 0px;
+  color:rgb(209, 25, 200);
+  text-shadow: -3px 1px 1px rgb(215, 218, 64);
+  font-size: 20px;
+  font-weight: 39px;
+  padding: 3px;
+}
+#label1 {
+  font-size: 0.95em;
+}
+#header {
+  background: url(media/images3.jpeg) no-repeat;
+  background-size: 100% 100%;
+  color:red;
+  text-shadow: 1px 1px 1px rgb(10, 10, 4);
+  text-align: center;
+  margin-top: 0;
+  padding-top: 2px;
+}
+input, select {
+  display: inline-block;
+  height: 20px;
+  width: 300px;
+  border-radius: 3px;
+  outline: none;
+  /* margin: auto; */
+  /* text-align: center; */
+}
+select {
+  height: 32px;
+  width: 312px;
+  font-size: 20px;
+}
+input {
+  padding: 4px;
+  margin-right: 0px;
+  font-size: 25px;
+  background-color: rgb(236, 204, 161);
+}
+div {
+  margin-top: 10px;
+}
+#submit {
+  height: 40px;
+  border-radius: 10px;
+  font-size: x-large;
+  color: rgb(255, 255, 255);
+  background-image: radial-gradient(black, rgb(221, 17, 17));
+  outline: none;
+}
+#header-text {
+  margin: 0px;
+}
+#header-text {
+  text-align: center;
+}
+#form-page {
+  width: 300px;
+  margin: auto;
+  color: white;
+  font-weight: bolder;
+}
+sup {
+  color: red;
+}
+/*second page*/
+#tabs {
+  width: 100%;
+  margin: 0px;
+  margin-left: 0px;
+  margin-top: -1px;
+  padding: 0px;
+}
+#second-page {
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-width: 0px 1px 1px 1px;
+  text-align: center;
+}
+#second-page, #mild-result, #severe-result {
+  display: none;
+}
+
+#mild-tab-btn, #severe-tab-btn, #home-tab-btn {
+  display: inline-block;
+  margin: -2px;
+  color: white;
+  border: 2px solid black;
+  font-size: small;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 900;
+}
+#mild-tab-btn {
+  background:rgb(199, 134, 12);
+  width: 100px;
+  border-left: none;
+}
+#severe-tab-btn {
+  background: rgb(161, 21, 21);
+  width: 131px;
+  border-right: none;
+  border-left: none;
+}
+#home-tab-btn {
+  background: #999;
+  width: 111px;
+}
+#severe-result {
+  color: white;
+  background: rgb(161, 21, 21);
+}
+#mild-result {
+  color: white;
+  background: rgb(199, 134, 12);
+}
+ol {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+#advice {
+  text-align: left;
+  background-color: darksalmon;
+  padding: 3px;
+}
+#contact {
+  color: white;
+}
+#u {
+  text-decoration: underline;
+}
+footer {
+  color: white;
+}
