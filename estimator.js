@@ -203,7 +203,7 @@ const covid19ImpactEstimator = (data) => {
   };
 };
 
-submitBtn.addEventListener('click', () => {
+submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
   // return false;
   inputData = collectData();
