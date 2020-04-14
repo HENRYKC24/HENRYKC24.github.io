@@ -51,9 +51,9 @@ completeValue = () => {
   const howMany = document.getElementById('label');
   const percentagePop = document.getElementById('label1');
   if (unit1 === '') {
-    percentagePop.textContent = 'Population % Earning (0) USD Daily:';
+    percentagePop.textContent = 'Population percentage that earns (0) USD Daily:';
   } else {
-    percentagePop.textContent = 'Population % Earning ' + unit1 + ' USD above Daily:';
+    percentagePop.textContent = 'Population percentage that earns ' + unit1 + ' USD Daily:';
   }
   howMany.textContent = 'Estimate In How Many ' + unit + ':';
 },
@@ -204,7 +204,7 @@ const covid19ImpactEstimator = (data) => {
 };
 
 submitBtn.addEventListener('click', () => {
-  // e.preventDefault();
+  e.preventDefault();
   // return false;
   inputData = collectData();
   outputData = covid19ImpactEstimator(inputData),
@@ -233,7 +233,6 @@ submitBtn.addEventListener('click', () => {
   sregion.textContent = inputData.region.name.toUpperCase(),
   src.textContent = inputData.reportedCases,
   sci.textContent = outputData.severeImpact.currentlyInfected;
-
   showSecondPage();
   showMildResultTab()
 });
