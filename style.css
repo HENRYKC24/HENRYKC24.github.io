@@ -21,11 +21,11 @@ body {
   background-size: 100% 100%;
   /* text-align: center; */
 }
-#freeze {
+/* #freeze {
   position: sticky;
   top: 0px;
   z-index: 4;
-}
+} */
 #tabs {
   position: sticky;
   top: 273px;
