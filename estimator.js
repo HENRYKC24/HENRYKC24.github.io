@@ -151,6 +151,7 @@ const infByReqTime = (elapsedTime, cInf) => {
   return cInf * (2 ** exponent);
 };
 const inDays = (periodType, timeToElapse) => {
+  console.log(periodType);
   let result;
   if (periodType === 'days') {
     result = timeToElapse;
@@ -280,34 +281,52 @@ submitBtn.addEventListener('click', (e) => {
     pre.textContent = estimationValue.value + ' ' + estimationUnit.value + ' time:';
     pre.style.fontWeight = "bolder";
   };
-  meip.textContent = outputData.impact.infectionsByRequestedTime,
-  mesip.textContent = outputData.impact.severeCasesByRequestedTime,
-  meahb.textContent = outputData.impact.hospitalBedsByRequestedTime,
-  meipicu.textContent = outputData.impact.casesForICUByRequestedTime,
+  meip.textContent = outputData.impact.infectionsByRequestedTime;
+  mesip.textContent = outputData.impact.severeCasesByRequestedTime;
+  const mOutHospBeds = outputData.impact.hospitalBedsByRequestedTime;
+  const inHospBeds = inputData.totalHospitalBeds;
+  if (mOutHospBeds < 0 && inHospBeds) {
+    meahb.textContent = 'Short by ' + (mOutHospBeds * -1) + ' beds';
+  } else if (mOutHospBeds > 0 && inHospBeds) {
+    meahb.textContent = mOutHospBeds;
+  } else if (!inHospBeds) {
+    meahb.textContent = 'Oops! No input provided';
+  }
+  meipicu.textContent = outputData.impact.casesForICUByRequestedTime;
   meipv.textContent = outputData.impact.casesForVentilatorsByRequestedTime;
   const mDollars = inputData.region.avgDailyIncomeInUSD;
   if (mDollars) {
     meedl.textContent = outputData.impact.dollarsInFlight;
-    metel.textContent = outputData.impact.dollarsInFlight * takeWholeNum(inDays(inputData.periodType, inputData.timeToElapse));
+    let multiplier = takeWholeNum(inDays(inputData.periodType, inputData.timeToElapse));
+    metel.textContent = outputData.impact.dollarsInFlight * multiplier;
   } else {
-    meedl.textContent = 'You did not provide the input';
-    metel.textContent = 'You did not provide the input';
+    meedl.textContent = 'Oops! No input';
+    metel.textContent = 'Oops! No input';
   };
-  seip.textContent = outputData.severeImpact.infectionsByRequestedTime,
-  sesip.textContent = outputData.severeImpact.severeCasesByRequestedTime,
-  seahb.textContent = outputData.severeImpact.hospitalBedsByRequestedTime,
-  seipicu.textContent = outputData.severeImpact.casesForICUByRequestedTime,
+  seip.textContent = outputData.severeImpact.infectionsByRequestedTime;
+  sesip.textContent = outputData.severeImpact.severeCasesByRequestedTime;
+  seahb.textContent = outputData.severeImpact.hospitalBedsByRequestedTime;
+  const sOutHospBeds = outputData.impact.hospitalBedsByRequestedTime;
+  if (sOutHospBeds < 0 && inHospBeds) {
+    seahb.textContent = 'Short by ' + (sOutHospBeds * -1) + ' beds';
+  } else if (sOutHospBeds > 0 && inHospBeds) {
+    seahb.textContent = sOutHospBeds;
+  } else if (!inHospBeds) {
+    seahb.textContent = 'Oops! No input provided';
+  }
+  seipicu.textContent = outputData.severeImpact.casesForICUByRequestedTime;
   seipv.textContent = outputData.severeImpact.casesForVentilatorsByRequestedTime;
   const sDollars = inputData.region.avgDailyIncomeInUSD;
   if (sDollars) {
     seedl.textContent = outputData.severeImpact.dollarsInFlight;
-    setel.textContent = outputData.severeImpact.dollarsInFlight * takeWholeNum(inDays(inputData.periodType, inputData.timeToElapse));
+    let multiplier = takeWholeNum(inDays(inputData.periodType, inputData.timeToElapse));
+    setel.textContent = outputData.severeImpact.dollarsInFlight * multiplier;
   } else {
-    seedl.textContent = 'You did not provide the input';
-    setel.textContent = 'You did not provide the input';
+    seedl.textContent = 'Oops! No input';
+    setel.textContent = 'Oops! No input';
   };
-  sregion.textContent = inputData.region.name.toUpperCase(),
-  src.textContent = inputData.reportedCases,
+  sregion.textContent = inputData.region.name.toUpperCase();
+  src.textContent = inputData.reportedCases;
   sci.textContent = outputData.severeImpact.currentlyInfected;
   showSecondPage();
   showMildResultTab()
