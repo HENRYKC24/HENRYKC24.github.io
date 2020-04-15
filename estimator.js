@@ -341,6 +341,6 @@ submitBtn.addEventListener('click', (e) => {
   sci.textContent = outputData.severeImpact.currentlyInfected;
   showSecondPage();
   showMildResultTab()
-  document.querySelector('[id="top"]').click();
+  document.querySelector('[id="gen"]').click();
 });
 
