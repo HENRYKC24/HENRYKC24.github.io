@@ -84,7 +84,7 @@ showMildResultTab = () => {
   severeTabBtn.style.borderBottom = '2px solid black';
   severeTabBtn.style.borderLeft = '2px solid black';
   mildTabBtn.style.borderRight = 'none';
-  secondPage.style.backgroundColor = 'rgb(199, 134, 12)';
+  secondPage.style.backgroundColor = 'rgb(138, 93, 9)';
   hideSevereRestltTab();
 },
 hideMildResultTab = () => {
@@ -120,6 +120,18 @@ estimationUnit.addEventListener('click', () => {
 estimationUnit.addEventListener('keyup', () => {
   completeValue();
 });
+mildTabBtn.addEventListener('click', () => {
+  document.querySelector('[id="gen"]').click();
+});
+severeTabBtn.addEventListener('click', () => {
+  document.querySelector('[id="gen"]').click();
+});
+let options = estimationUnit.children;
+for (const option of options) {
+  option.addEventListener('click', () => {
+    completeValue();
+  });
+};
 avgDI.addEventListener('keyup', () => {
   completeValue();
 });
@@ -231,43 +243,42 @@ submitBtn.addEventListener('click', (e) => {
     if (index === 1) {
       let country = document.querySelector('#country-valdn-msg');
       country.textContent = 'required';
-      let downMsg = document.querySelector('#msg-down');
-      downMsg.textContent = 'Country/Region field is required';
-      // console.log(downMsg);
-      document.querySelector('body').scrollTop = -500;
+      document.querySelector('[id="link1"]').click();
+      document.querySelector('#country').focus();
       setTimeout(() => {
         country.textContent = '';
-        downMsg.textContent = '';
-        document.querySelector('#country').focus();
       }, 3000);
       return;
     }
     if (index === 2) {
       let cases = document.querySelector('#cases-valdn-msg');
       cases.textContent = 'required';
+      document.querySelector('[id="link3"]').click();
+      document.querySelector('#reported-cases').focus();
       setTimeout(() => {
         cases.textContent = '';
-        document.querySelector('#reported-cases').focus();
       }, 3000);
       return;
     }
     if (index === 3) {
       let unitValue = document.querySelector('#unit-valdn-msg');
-      let unit = document.querySelector('#est-unit').value;
       unitValue.textContent = 'required';
+      // let unit = document.querySelector('#est-unit').value;
+      document.querySelector('#unit-val').focus();
+      document.querySelector('[id="link4"]').click();
+      document.querySelector('#unit-val').focus();
       setTimeout(() => {
         unitValue.textContent = '';
-        document.querySelector('#unit-val').focus();
       }, 3000);
     }
     return;
   } else if (Number(reqValues[3]) < 0 || Number(reqValues[3]) > 100) {
-    let downMsg = document.querySelector('#msg-down');
-    downMsg.textContent = 'Population percetage value should be between 0 and 100';
+    let perc = document.querySelector('#percent-valdn-msg');
+    perc.textContent = 'Population percetage value should be between 0 and 100';
+    document.querySelector('#avg-daily-inc-pop').focus();
     setTimeout(() => {
-      downMsg.textContent = '';
-      document.querySelector('#avg-daily-inc-pop').focus();
-    }, 3000);
+      perc.textContent = '';
+    }, 4000);
     return;
   }
   // return false;
@@ -324,7 +335,7 @@ submitBtn.addEventListener('click', (e) => {
   } else {
     seedl.textContent = 'Oops! No input';
     setel.textContent = 'Oops! No input';
-  };
+  }
   sregion.textContent = inputData.region.name.toUpperCase();
   src.textContent = inputData.reportedCases;
   sci.textContent = outputData.severeImpact.currentlyInfected;

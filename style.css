@@ -28,11 +28,6 @@ body {
   top: 0px;
   z-index: 4;
 } */
-/* #tabs {
-  position: sticky;
-  top: 273px;
-  z-index: 4;
-} */
 #middle-head {
   margin: 0px;
   color:rgb(10, 7, 10);
@@ -47,12 +42,17 @@ body {
 #header {
   background: url(media/images3.jpeg) no-repeat;
   background-size: 100% 100%;
-  color:red;
-  text-shadow: 1px 1px 1px rgb(10, 10, 4);
+  color:white;
+  text-shadow: 1px 1px 1px rgb(124, 124, 105);
   text-align: center;
-  margin-top: 0;
+  margin: 0 auto;
   padding-top: 2px;
   border-bottom: 10px solid rgb(32, 29, 29);
+  width: 300px;
+}
+#we-for {
+  color: red;
+  text-shadow: 2px 2px blanchedalmond;
 }
 input, select {
   display: inline-block;
@@ -93,11 +93,21 @@ div {
   border-radius: 10px;
   font-size: x-large;
   color: white;
-  background-image: radial-gradient(rgb(27, 27, 25), rgb(248, 245, 245));
+  background-image: radial-gradient(rgb(27, 27, 25), rgb(59, 55, 55));
   outline: none;
 }
 #header-text {
   margin: 0px;
+  text-align: center;
+}
+#header #opn {
+  color: white;
+  text-shadow: 2px 2px rgb(41, 40, 40);
+}
+#intro {
+  color: white;
+  width: 300px;
+  margin: auto;
   text-align: center;
 }
 #form-page {
@@ -111,8 +121,12 @@ sup {
 }
 /*second page*/
 #tabs {
+  position: sticky;
+  top: 0px;
+  z-index: 4;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   width: 100%;
   margin: 0px;
   /* margin-left: 0px; */
@@ -141,8 +155,8 @@ sup {
   font-weight: 900;
 }
 #mild-tab-btn {
-  background:rgb(199, 134, 12);
-  width: 100px;
+  background:rgb(138, 93, 9);
+  width: 116px;
   border-left: none;
 }
 #severe-tab-btn {
@@ -153,7 +167,7 @@ sup {
 }
 #home-tab-btn {
   background: #999;
-  width: 111px;
+  width: 117px;
 }
 #severe-result {
   color: white;
@@ -161,7 +175,7 @@ sup {
 }
 #mild-result {
   color: white;
-  background: rgb(199, 134, 12);
+  background: rgb(138, 93, 9);
 }
 ol {
   margin-bottom: 0px;
@@ -172,14 +186,20 @@ ol {
   background-color: darksalmon;
   padding: 3px;
 }
+#result-explained {
+  color: white;
+  text-align: left;
+  padding: 4px;
+}
 #contact {
   color: white;
 }
 #u {
   text-decoration: underline;
 }
-footer {
+footer, #contact {
   color: white;
+  text-align: center;
 }
 /*remove spinners in number inputs*/
 input::-webkit-outer-spin-button,

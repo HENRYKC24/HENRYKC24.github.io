@@ -16,21 +16,20 @@
       <header>
         <h3 id="top-text">BUILT FOR SUSTAINABLE DEVELOPMENT GOALS(SDG)</h3>
       </header>
-
       <section id="header">
-        <h2 id="header-text">COVID-19 IMPACT ESTIMATOR</h2>
+        <h2 id="header-text">COVID-19 IMPACT ESTIMATOR<br /><span id="opn">AN EYE OPENER!</span></h2>
         <h3 id="middle-head"><span id="heading-text-middle">Public Health,
            The Economy, The Workforce, Religion, Everything is in disarray...
            <br />STAY AT HOME!</span></h3>
-        <h3>WE CAN ESTIMATE THE FUTURE IMPACT OF THIS PANDEMIC</h3>
+        <h3 id="we-for">WE FORECAST IMPACT OF THIS PANDEMIC</h3>
       </section>
     </div>
-    
+    <section id="intro"><h3>Fill the form below and click "run estimation" for an impact forecast.</h3></section>
     <section id="form-page">
       <!-- <section id="valdn-msg"></section> -->
       <form action="">
         <div>
-          <label for="country">Country/Region:</label>
+          <label id="cont-lbl" for="country">Country/Region:</label>
           <span><sup>*</sup></span>
           <span id="country-valdn-msg"></span>
           <input id="country" type="text" required />
@@ -76,15 +75,15 @@
           <span id="unit-valdn-msg"></span>
           <input id="unit-val" type="number" data-time-to-elapse required />
         </div>
-        <p id="msg-down"></p>
         <div>
           <input id="submit" type="submit" data-go-estimate value="RUN ESTIMATION" />
         </div>
       </form>
-      <!-- <a id="link1" href="#country"><input type="hidden" /></a> -->
-      <!-- <a id="link2" href="#avg-daily-inc-pop"><input type="hidden" /></a> -->
-      <!-- <a id="" href=""><input type="hidden" /></a> -->
-      <!-- <a id="" href=""><input type="hidden" /></a> -->
+      <a id="link1" href="#cont-lbl"><input type="hidden" /></a>
+      <a id="link2" href="#avg-daily-inc-pop"><input type="hidden" /></a>
+      <a id="link3" href="#reported-cases"><input type="hidden" /></a>
+      <a id="link4" href="#unit-val"><input type="hidden" /></a>
+      <a id="gen" href="#second-page"><input type="hidden" /></a>
     </section>
 
 
@@ -163,6 +162,7 @@
         <p>Total Economic loss in <span class="pre"></span>
           <br /><span id="setel"></span></p>
       </section>
+      
       <section id="advice">
         <h1>ADVICE</h1>
         <p><strong>Note: </strong>Before you <strong>believe</strong> and
@@ -171,7 +171,10 @@
         <p>However, the estimation above can only be true if we do not take the precautions below. 
           Most people who become infected 
           experience mild illness and recover, but it can be more severe for others. 
+          <strong>Research works that my computation is based can be found at the 
+            end of this page.</strong>
           Take care of your health and protect others by doing the following:</p>
+          
         <ol>
           <li><strong>Wash your hands frequently:</strong><br />
             Regularly and thoroughly clean your hands with an alcohol-based 
@@ -181,6 +184,7 @@
             with soap and water or using alcohol-based hand rub kills viruses 
             that may be on your hands
           </li>
+          <br />
           <li><strong>Maintain social distancing:</strong><br />
             Maintain at least 1 metre (3 feet) distance between yourself and 
             anyone who is coughing or sneezing.
@@ -189,10 +193,12 @@
             spray small liquid droplets from their nose or mouth which may contain
              virus. If you are too close, you can breathe in the droplets, 
              including the COVID-19 virus if the person coughing has the disease.</li>
+             <br />
           <li>Avoid touching eyes, nose and mouth
             <br /><strong>Why?</strong> Hands touch many surfaces and can pick up viruses. 
             Once contaminated, hands can transfer the virus to your eyes, nose or mouth.
              From there, the virus can enter your body and can make you sick.</li>
+             <br />
           <li><strong>Practice respiratory hygiene:</strong><br />
             Make sure you, and the people around you, follow good respiratory hygiene. 
             This means covering your mouth and nose with your bent elbow or tissue when
@@ -200,6 +206,7 @@
             
             <br /><strong>Why?</strong> Droplets spread virus. By following good respiratory 
             hygiene you protect the people around you from viruses such as cold, flu and COVID-19.</li>
+            <br />
           <li>If you have fever, cough and difficulty breathing, seek medical care early
             Stay home if you feel unwell. If you have a fever, cough and difficulty breathing,
              seek medical attention and call in advance. Follow the directions of your local health authority.
@@ -208,6 +215,7 @@
              to date information on the situation in your area. Calling in advance will allow
               your health care provider to quickly direct you to the right health facility. 
               This will also protect you and help prevent spread of viruses and other infections.</li>
+              <br />
           <li>Stay informed and follow advice given by your healthcare provider
             Stay informed on the latest developments about COVID-19. Follow advice given by
              your healthcare provider, your national and local public health authority or your
@@ -218,9 +226,25 @@
              placed to advise on what people in your area should be doing to protect themselves.</li>
         </ol>
       </section>
+      <section id="result-explained">
+        <p>The above estimation/projection is for the worst case 
+          scenarios if we do not curtail the spread of the disease caused
+          by SARS-CoV-3. It reminds us of what is to befall us if we dont take the advice above. I computed 
+          the above values based on credible
+          research findings on the virus below.
+          <br /> 
+          <br />worldometers.info
+          <br /><br />blogs.worldbank.org
+          <br /><br />https://medium.com/@Jason_Scott_Warner/the-sober-math-everyone-must-understand-about
+          -the-pandemic-2b0145881993
+          <br /><br />Several stats from Harvard Medical School / Massachusetts General Hospital
+        </p>
+      </section>
     </section>
     <section id="contact">
-      <p><span id="u">Contact</span><br />PHONE: 0803 262 1842(also on WhatsApp) <br />EMAIL: henrykc24@yahoo.com</p>
+      <p><span id="u">CONTACT</span>
+        <br />Phone: 0803 262 1842 (also on WhatsApp) 
+        <br />Email: henrykc24@yahoo.com</p>
     </section>
     <footer id="footer">&copy;2020 KCSoftSolutions. All rights reserved.</footer>
   </main>
