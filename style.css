@@ -30,11 +30,16 @@ body {
 } */
 #middle-head {
   margin: 0px;
-  color:rgb(10, 7, 10);
-  text-shadow: -3px 1px 1px rgb(247, 244, 244);
-  font-size: 20px;
+  color:rgb(1, 247, 13);
+  /* text-shadow: -3px 1px 1px rgb(247, 244, 244); */
+  font-size: 25px;
   font-weight: 59px;
   padding: 3px;
+}
+#stay {
+  color: rgb(243, 247, 242);
+  text-shadow: 2px 2px rgb(32, 28, 28);
+  font-size: larger;
 }
 #label1 {
   font-size: 0.95em;
@@ -42,7 +47,8 @@ body {
 #header {
   background: url(media/images3.jpeg) no-repeat;
   background-size: 100% 100%;
-  color:white;
+  color:rgb(211, 247, 6);
+  font-size: 20px;
   text-shadow: 1px 1px 1px rgb(124, 124, 105);
   text-align: center;
   margin: 0 auto;
@@ -50,10 +56,11 @@ body {
   border-bottom: 10px solid rgb(32, 29, 29);
   width: 300px;
 }
-#we-for {
+/* #we-for {
   color: red;
   text-shadow: 2px 2px blanchedalmond;
-}
+  margin: 0px;
+} */
 input, select {
   display: inline-block;
   height: 20px;
@@ -92,8 +99,9 @@ div {
   height: 40px;
   border-radius: 10px;
   font-size: x-large;
+  font-weight: bolder;
   color: white;
-  background-image: radial-gradient(rgb(27, 27, 25), rgb(59, 55, 55));
+  background-image: radial-gradient(rgb(27, 27, 25), rgb(211, 247, 6));
   outline: none;
 }
 #header-text {
@@ -132,6 +140,7 @@ sup {
   /* margin-left: 0px; */
   margin-top: -1px;
   padding: 0px;
+  line-height: 31px;
 }
 #second-page {
   position: relative;
@@ -158,16 +167,19 @@ sup {
   background:rgb(138, 93, 9);
   width: 116px;
   border-left: none;
+  height: 30px;
 }
 #severe-tab-btn {
   background: rgb(161, 21, 21);
   width: 131px;
   border-right: none;
   border-left: none;
+  height: 30px;
 }
 #home-tab-btn {
   background: #999;
   width: 117px;
+  height: 30px;
 }
 #severe-result {
   color: white;
