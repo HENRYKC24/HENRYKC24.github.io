@@ -81,10 +81,10 @@ hideSecondPage = () => {
 showMildResultTab = () => {
   mildResultTab.style.display = 'block';
   mildTabBtn.style.borderBottom = 'none';
-  severeTabBtn.style.borderBottom = '2px solid black';
-  severeTabBtn.style.borderLeft = '2px solid black';
+  severeTabBtn.style.borderBottom = '1px solid white';
+  severeTabBtn.style.borderLeft = '1px solid white';
   mildTabBtn.style.borderRight = 'none';
-  secondPage.style.backgroundColor = 'rgb(138, 93, 9)';
+  secondPage.style.backgroundColor = 'rgb(161, 21, 21)';
   hideSevereRestltTab();
 },
 hideMildResultTab = () => {
@@ -93,11 +93,11 @@ hideMildResultTab = () => {
 showSevereResultTab = () => {
   severeResultTab.style.display = 'block';
   severeTabBtn.style.borderBottom = 'none';
-  mildTabBtn.style.borderBottom = '2px solid black';
-  mildTabBtn.style.borderLeft = '2px solid black';
+  mildTabBtn.style.borderBottom = '1px solid white';
+  mildTabBtn.style.borderLeft = '1px solid white';
   severeTabBtn.style.borderLeft = 'none';
   mildTabBtn.style.borderLeft = 'none';
-  mildTabBtn.style.borderRight = '2px solid black';
+  mildTabBtn.style.borderRight = '1px solid white';
   secondPage.style.backgroundColor = 'rgb(161, 21, 21)';
   hideMildResultTab();
 },
