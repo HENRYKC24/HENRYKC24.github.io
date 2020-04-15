@@ -12,12 +12,17 @@ body {
   text-align: center;
   margin: 0px;
 }
+#enclosure {
+  border: 1px solid wheat;
+  padding: 0px;
+  width: 350px;
+  margin: auto;
+}
 #app {
   position: relative;
   max-width: 365px;
   border-radius: 10px;
   margin: 0px auto 3px;
-  border: 2px solid black;
   padding: 4px;
   background-image: linear-gradient(to bottom right,
   rgb(7, 6, 7), rgb(7, 7, 7));
@@ -146,8 +151,8 @@ sup {
 #second-page {
   position: relative;
   box-sizing: border-box;
-  border: 2px  solid white;
-  border-width: 0px 1px 1px 1px;
+  border: 2px solid white;
+  border-width: 1px 0px 1px 0px;
   text-align: center;
   max-width: 350px;
   margin: auto;
