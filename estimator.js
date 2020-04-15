@@ -121,10 +121,10 @@ estimationUnit.addEventListener('keyup', () => {
   completeValue();
 });
 mildTabBtn.addEventListener('click', () => {
-  document.querySelector('[id="gen"]').click();
+  document.querySelector('[id="link5"]').click();
 });
 severeTabBtn.addEventListener('click', () => {
-  document.querySelector('[id="gen"]').click();
+  document.querySelector('[id="link5"]').click();
 });
 let options = estimationUnit.children;
 for (const option of options) {
@@ -163,7 +163,6 @@ const infByReqTime = (elapsedTime, cInf) => {
   return cInf * (2 ** exponent);
 };
 const inDays = (periodType, timeToElapse) => {
-  console.log(periodType);
   let result;
   if (periodType === 'days') {
     result = timeToElapse;
@@ -341,6 +340,6 @@ submitBtn.addEventListener('click', (e) => {
   sci.textContent = outputData.severeImpact.currentlyInfected;
   showSecondPage();
   showMildResultTab()
-  document.querySelector('[id="gen"]').click();
+  document.querySelector('[id="link5"]').click();
 });
 
