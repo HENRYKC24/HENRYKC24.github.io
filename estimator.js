@@ -1,3 +1,6 @@
+// if (navigator.serviceWorker) {
+//   console.log('Service Worder Suported');
+// }
 const country = document.querySelector('#country'),
 population = document.querySelector('#pop'),
 avgDIP = document.querySelector('#avg-daily-inc-pop'),
@@ -36,8 +39,11 @@ seipicu = document.querySelector('#severe-result #seipicu'),
 seipv = document.querySelector('#severe-result #seipv'),
 seedl = document.querySelector('#severe-result #seedl'),
 setel = document.querySelector('#severe-result #setel');
-
-completeValue = () => {
+const tips = document.querySelectorAll('.tips-btn');
+for (const tip of tips) {
+  tip.setAttribute('title', 'Click for more information on this');
+};
+const completeValue = () => {
   let unit1 = avgDI.value,
   unit = estimationUnit.value;
   unit = unit.split('');
@@ -50,12 +56,12 @@ completeValue = () => {
   unit1 = unit1.join('');
   const howMany = document.getElementById('label');
   const percentagePop = document.getElementById('label1');
-  if (unit1 === '') {
-    percentagePop.textContent = 'Population percentage that earns (0) USD Daily:';
+  if (unit1 !== '') {
+    percentagePop.textContent = 'Population % earning ' + unit1 + ' USD Daily:';
   } else {
-    percentagePop.textContent = 'Population percentage that earns ' + unit1 + ' USD Daily:';
+    percentagePop.textContent = 'Provide the USD above before this:';
   }
-  howMany.textContent = 'Estimate In How Many ' + unit + ':';
+  howMany.textContent = 'Number of ' + unit + ':';
 },
 collectData = () => {
   const data = {};
@@ -111,6 +117,11 @@ showFormPage = () => {
 hideFormPage = () => {
   formPage.style.display = 'none';
 };
+avgDIP.addEventListener('click', () => {
+  if (avgDI.value === '') {
+    avgDI.focus();
+  }
+});
 estimationUnit.addEventListener('blur', () => {
   completeValue();
 });
@@ -119,6 +130,26 @@ estimationUnit.addEventListener('click', () => {
 });
 estimationUnit.addEventListener('keyup', () => {
   completeValue();
+});
+estimationValue.addEventListener('keyup', (event) => {
+  let estValue = estimationValue.value;
+  let wantedText = estimationUnit.options[estimationUnit.selectedIndex].value;
+  wantedText = wantedText.split('');
+  wantedText[0] = wantedText[0].toUpperCase();
+  wantedText = wantedText.join('');
+  if (Number(estValue) === 1) {
+    let wantedTextArray = wantedText.split('');
+    if (wantedTextArray[wantedTextArray.length - 1]  === 's') {
+      wantedTextArray.pop();
+      estimationUnit.options[estimationUnit.selectedIndex].textContent = wantedTextArray.join('');
+    }
+  }
+  if (Number(estValue) === 0 || Number(estValue) > 1) {
+    estimationUnit.options[estimationUnit.selectedIndex].textContent = wantedText;
+  }
+  let finalValue = estimationUnit.options[estimationUnit.selectedIndex].textContent;
+  finalValue = finalValue.split('');
+  finalValue[0].toUpperCase();
 });
 mildTabBtn.addEventListener('click', () => {
   document.querySelector('[id="link5"]').click();
@@ -288,7 +319,7 @@ submitBtn.addEventListener('click', (e) => {
   mci.textContent = outputData.impact.currentlyInfected;
   const allPre = document.querySelectorAll('.pre');
   for (const pre of allPre) {
-    pre.textContent = estimationValue.value + ' ' + estimationUnit.value + ' time:';
+    pre.textContent = estimationValue.value + ' ' + estimationUnit.options[estimationUnit.selectedIndex].textContent + ' time:';
     pre.style.fontWeight = "bolder";
   };
   meip.textContent = outputData.impact.infectionsByRequestedTime;
@@ -341,5 +372,63 @@ submitBtn.addEventListener('click', (e) => {
   showSecondPage();
   showMildResultTab()
   document.querySelector('[id="link5"]').click();
+});
+const tipsArray = [
+  '"Country/State/Region": This is the continent, country, state or any region \
+  that you want to forecast the impact of corona virus for. \
+  Just type the name of the place you are forecasting for.',
+  '"Population": This is the total number of persons living in the region you chose in \
+  the input above it. The population of the country, state or any region.\
+  This index can be found on the internet using google search.',
+  '"Average Daily Income (USD)": This means how much money on the average \
+  each person earns as income daily. For example, if most people earn 4,000\
+   some day and 6,000  another day, the average daily income is 5,000. That is adding together the incomes for the days \
+  and dividing them equally among the days. This index can be found on the \
+  internet using google search.',
+  '"Population percentage earning some USD Daily": This value can only be provided \
+  if and only if you provided the "Average Daily Income (USD)". In a region, there are some people \
+  earning a huge amount of money daily. In most cases, these people only represent a\
+   small percentage of the population while the majority earns lower. For example, In a region with \
+  4000 persons living there as the population, 80 percent (3,600 persons) might be \
+  earning 6 dollars per day while the remaining 20 percent (800 persons) earns more. \
+  The required value that you should provide is 80. This index can be found on\
+   the internet using google search.',
+  '"Average Age": This represents the age on each person in the region on the \
+  average. For example, if the population of the \
+  region is only 4 persons, and first person is 3 years old, second 2, third 1 \
+  and fourth is 2. the total age is 8 and if you divide it \
+  evenly among the 4 persons you get 8/4 which is 2. This 2 is the value \
+  required but you can not determine it on your own. \
+  You must find it in the internet using google search or other \
+  statistical data sources.',
+  '"Total Hospital Beds": This is the total of all the beds in all the hospitals\
+   in that region. This information can only be found in the region\'s statistical \
+   database. The data can be found on the internet using google search also.',
+  '"Reported Cases": This is the total persons that tested positive for COVID-19 in \
+  that region. This index can be found on the internet using google search.',
+  '"Unit": This is a drop down list that helps you to choose whether you want this \
+  app to forecast in days, weeks or months. It is in days by default but you can change it by clicking it \
+  to open the list.',
+  '"Number of ?": The text here depends of what is the "Unit" value. If the unit \
+  value is "Days", it becomes "Number of Days". If it is "Weeks", it reads "Number \
+  of Weeks" etc. This means the number of whatever is in the "Unit" list field which \
+  i will normalise in days programmatically. So, if you chose 7 days you will get same result as choosing 1 week.'
+];
+const hideTips = () => {
+  document.querySelector('#tips').style.display = 'none';
+};
+const body = document.querySelector('body');
+const tipsButtons = document.querySelectorAll('.tips-btn');
+for (let i = 0; i < tipsButtons.length; i++) {
+  tipsButtons[i].addEventListener('click', (event) => {
+    document.querySelector('#tips').style.display = 'block';
+    event.stopPropagation();
+    let tipsSection = document.querySelector('#tips div');
+    tipsSection.textContent = tipsArray[i];
+  })
+};
+const tipsCloseBtn = document.querySelector('#tips span');
+tipsCloseBtn.addEventListener('click', () => {
+  document.querySelector('#tips').style.display = 'none';
 });
 

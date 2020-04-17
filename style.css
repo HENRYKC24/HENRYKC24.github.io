@@ -50,6 +50,39 @@ body {
 #label1 {
   font-size: 0.95em;
 }
+#form-page span, #form-page p {
+  color: rgb(202, 29, 29);
+}
+#form-page .tips-btn {
+  color: white;
+  float: right;
+  margin: 0px;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0px 3px;
+}
+#tips {
+  display: none;
+  width: 350px;
+  margin: auto;
+  background: rgb(248, 246, 246);
+  position: fixed;
+  top: 200px;
+  padding: 5px 20px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 5px rgb(172, 59, 147);
+}
+#tips span {
+  float: right;
+  font-size: 30px;
+  color: red;
+  padding: 0px 4px;
+  margin-right: -15px;
+  margin-top: -5px;
+  height: 25px;
+  cursor: pointer;
+}
 #header {
   background: url(media/images3.jpeg) no-repeat;
   background-size: 100% 100%;
@@ -95,8 +128,11 @@ input {
   color: white;
   /* background-color: rgb(236, 204, 161); */
 }
-#form-page span, #form-page p {
-  color: rgb(202, 29, 29);
+#est-unit, #est-unit option {
+  border: 1px solid;
+  border-width: 0px 0px 1px;
+  margin-top: 5px;
+  padding: 0px;
 }
 div {
   margin-top: 10px;

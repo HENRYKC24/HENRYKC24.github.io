@@ -26,44 +26,45 @@
       </section>
     </div>
     <section id="intro"><h3>Fill the form below and click "run estimation" for an impact forecast.</h3></section>
+    <section id="tips"><span>&times;</span><div></div></section>
     <section id="form-page">
       <!-- <section id="valdn-msg"></section> -->
       <form action="">
         <div>
-          <label id="cont-lbl" for="country">Country/State/Region:</label>
+          <label id="cont-lbl" for="country">Country/State/Region: <span class="tips-btn">tips</span></label>
           <span><sup>*</sup></span>
           <span id="country-valdn-msg"></span>
           <input id="country" type="text" required />
         </div>
         <div>
-          <label for="pop">Population:</label>
+          <label for="pop">Population: <span class="tips-btn">tips</span></label>
           <input id="pop" type="number" data-population />
         </div>
         <div>
-          <label for="avg-daily-inc-usd">Average Daily Income(USD) Per Citizen:</label>
+          <label for="avg-daily-inc-usd">Average Daily Income (USD): <span class="tips-btn">tips</span></label>
           <input id="avg-daily-inc-usd" type="number" />
         </div>
         <div>
-          <label id="label1" for="avg-daily-inc-pop">Population % Earning </label>
+          <label id="label1" for="avg-daily-inc-pop">Give the USD above before this:</label><span class="tips-btn">tips</span>
           <span id="percent-valdn-msg"></span>
           <input id="avg-daily-inc-pop" type="number" min="1" max="100" />
         </div>
         <div>
-          <label for="avg-age">Average Age:</label>
+          <label for="avg-age">Average Age:</label><span class="tips-btn">tips</span>
           <input id="avg-age" type="number" />
         </div>
         <div>
-          <label for="hosp-beds">Total Hospital Beds:</label>
+          <label for="hosp-beds">Total Hospital Beds:</label><span class="tips-btn">tips</span>
           <input id="hosp-beds" type="number" data-total-hospital-beds />
         </div>
         <div>
-          <label for="reported-cases">Reported Cases:</label>
+          <label for="reported-cases">Reported Cases:</label><span class="tips-btn">tips</span>
           <span><sup>*</sup></span>
           <span id="cases-valdn-msg"></span>
           <input id="reported-cases" type="number" data-reported-cases required />
         </div>
         <div>
-          <label for="est-unit">Choose An Estimation Unit:</label>
+          <label for="est-unit">Unit:</label><span class="tips-btn">tips</span>
           <select name="est-unit" id="est-unit" data-period-type>
             <option value="days">Days</option>
             <option value="weeks">Weeks</option>
@@ -71,7 +72,7 @@
           </select>
         </div>
         <div>
-          <label id="label" for="unit-val"></label>
+          <label id="label" for="unit-val"></label><span class="tips-btn">tips</span>
           <span><sup>*</sup></span>
           <span id="unit-valdn-msg"></span>
           <input id="unit-val" type="number" data-time-to-elapse required />
