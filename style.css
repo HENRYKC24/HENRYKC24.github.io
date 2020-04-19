@@ -64,14 +64,18 @@ body {
 }
 #tips {
   display: none;
-  width: 350px;
-  margin: auto;
-  background: rgb(248, 246, 246);
   position: fixed;
+  z-index: 6;
+  /* left: %; */
+  width: 320px;
+  margin-left: 15px;
+  margin-top: -100px;
+  background-image: linear-gradient(to bottom right, rgb(172, 148, 144), rgb(240, 233, 239));
   top: 200px;
   padding: 5px 20px;
   box-sizing: border-box;
-  box-shadow: 1px 1px 5px rgb(172, 59, 147);
+  border: 3px solid;
+  box-shadow: 1px 1px 5px rgb(243, 243, 240);
 }
 #tips span {
   float: right;
@@ -84,7 +88,7 @@ body {
   cursor: pointer;
 }
 #header {
-  background: url(media/images3.jpeg) no-repeat;
+  background: url(media/coro.webp) no-repeat;
   background-size: 100% 100%;
   color:rgb(247, 14, 6);
   text-shadow: 1px 1px 1px rgb(248, 248, 246);
@@ -211,7 +215,7 @@ sup {
   border-right: none;
 }
 #mild-tab-btn {
-  background:rgb(161, 21, 21);
+  background:rgb(189, 126, 10);
   width: 116px;
   border-left: none;
   min-height: 30px;
@@ -224,7 +228,7 @@ sup {
   min-height: 30px;
 }
 #home-tab-btn {
-  background: rgb(161, 21, 21);
+  background: rgb(7, 7, 7);
   width: 117px;
   min-height: 30px;
 }
@@ -234,7 +238,21 @@ sup {
 }
 #mild-result {
   color: white;
-  background:rgb(161, 21, 21);
+  background:rgb(189, 126, 10);
+}
+#severe-result button, #mild-result button {
+  border-radius: 9px;
+  font-size: 1em;
+  border: 0px;
+  cursor: pointer;
+  outline: none;
+  background-color: black;
+  color: white;
+  /* margin-right: -100px; */
+}
+#severe-result button:active, #mild-result button:active {
+  background-color: white;
+  color: black;
 }
 ol {
   margin-bottom: 0px;
@@ -242,15 +260,20 @@ ol {
 }
 #advice {
   text-align: left;
-  background-color: rgb(161, 21, 21);
+  background-color: black;
   color: white;
   padding: 3px;
+}
+#hr {
+  margin: 0px;
+  padding: 0px;
 }
 #result-explained {
   color: white;
   text-align: left;
   padding: 4px;
   word-break: break-all;
+  background: black;
 }
 #contact {
   color: white;
@@ -258,7 +281,7 @@ ol {
 #u {
   text-decoration: underline;
 }
-a {
+.hide {
   display: none;
 }
 footer, #contact {

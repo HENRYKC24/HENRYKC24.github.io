@@ -18,53 +18,59 @@
         <h3 id="top-text">BUILT FOR SUSTAINABLE DEVELOPMENT GOALS(SDG)</h3>
       </header>
       <section id="header">
-        <h2 id="header-text">COVID-19 IMPACT ESTIMATOR<br /><span id="opn">AN EYE OPENER!</span></h2>
+        <h2 id="header-text">COVID-19 IMPACT ESTIMATOR<br />
+          <span id="opn">AN EYE OPENER!</span></h2>
         <h3 id="middle-head"><span id="heading-text-middle">Public Health,
            The Economy, The Workforce, Religion, Everything is in disarray...
            <br /><span id="stay">STAY AT HOME!</span></span></h3>
         <!-- <h3 id="we-for">WE FORECAST IMPACT OF THIS PANDEMIC</h3> -->
       </section>
     </div>
-    <section id="intro"><h3>Fill the form below and click "run estimation" for an impact forecast.</h3></section>
+    <section id="intro"><h3>Fill the form below and click "run estimation"
+       for an impact forecast.</h3></section>
     <section id="tips"><span>&times;</span><div></div></section>
     <section id="form-page">
       <!-- <section id="valdn-msg"></section> -->
       <form action="">
         <div>
-          <label id="cont-lbl" for="country">Country/State/Region: <span class="tips-btn">tips</span></label>
+          <hr />
+          <label id="cont-lbl" for="country">Country/State/Region: 
+            <span class="tips-btn">hint</span></label>
           <span><sup>*</sup></span>
           <span id="country-valdn-msg"></span>
           <input id="country" type="text" required />
         </div>
         <div>
-          <label for="pop">Population: <span class="tips-btn">tips</span></label>
+          <label for="pop">Population: <span class="tips-btn">hint</span></label>
           <input id="pop" type="number" data-population />
         </div>
         <div>
-          <label for="avg-daily-inc-usd">Average Daily Income (USD): <span class="tips-btn">tips</span></label>
+          <label for="avg-daily-inc-usd">Average Daily Income (USD): 
+            <span class="tips-btn">hint</span></label>
           <input id="avg-daily-inc-usd" type="number" />
         </div>
         <div>
-          <label id="label1" for="avg-daily-inc-pop">Give the USD above before this:</label><span class="tips-btn">tips</span>
+          <label id="label1" for="avg-daily-inc-pop">Give the USD above before this:</label>
+          <span class="tips-btn">hint</span>
           <span id="percent-valdn-msg"></span>
           <input id="avg-daily-inc-pop" type="number" min="1" max="100" />
         </div>
         <div>
-          <label for="avg-age">Average Age:</label><span class="tips-btn">tips</span>
+          <label for="avg-age">Average Age:</label><span class="tips-btn">hint</span>
           <input id="avg-age" type="number" />
         </div>
         <div>
-          <label for="hosp-beds">Total Hospital Beds:</label><span class="tips-btn">tips</span>
+          <label for="hosp-beds">Total Hospital Beds:</label><span class="tips-btn">hint</span>
           <input id="hosp-beds" type="number" data-total-hospital-beds />
         </div>
         <div>
-          <label for="reported-cases">Reported Cases:</label><span class="tips-btn">tips</span>
+          <label for="reported-cases">Reported Cases:</label><span class="tips-btn">hint</span>
           <span><sup>*</sup></span>
           <span id="cases-valdn-msg"></span>
           <input id="reported-cases" type="number" data-reported-cases required />
         </div>
         <div>
-          <label for="est-unit">Unit:</label><span class="tips-btn">tips</span>
+          <label for="est-unit">Unit:</label><span class="tips-btn">hint</span>
           <select name="est-unit" id="est-unit" data-period-type>
             <option value="days">Days</option>
             <option value="weeks">Weeks</option>
@@ -72,7 +78,7 @@
           </select>
         </div>
         <div>
-          <label id="label" for="unit-val"></label><span class="tips-btn">tips</span>
+          <label id="label" for="unit-val"></label><span class="tips-btn">hint</span>
           <span><sup>*</sup></span>
           <span id="unit-valdn-msg"></span>
           <input id="unit-val" type="number" data-time-to-elapse required />
@@ -81,11 +87,12 @@
           <input id="submit" type="submit" data-go-estimate value="RUN ESTIMATION" />
         </div>
       </form>
-      <a id="link1" href="#cont-lbl"><input type="hidden" value="hidden" />Just here</a>
-      <a id="link2" href="#avg-daily-inc-pop"><input type="hidden" value="hidden" />Just here</a>
-      <a id="link3" href="#reported-cases"><input type="hidden" value="hidden" />Just here</a>
-      <a id="link4" href="#unit-val"><input type="hidden" value="hidden" />Just here</a>
-      <a id="link5" href="#second-page"><input type="hidden" value="hidden" />Just here</a>
+      <a id="link1" class="hide" href="#cont-lbl">Just here</a>
+      <a id="link2" class="hide" href="#avg-daily-inc-pop">Just here</a>
+      <a id="link3" class="hide" href="#reported-cases">Just here</a>
+      <a id="link4" class="hide" href="#unit-val">Just here</a>
+      <a id="link5" class="hide" href="#second-page">Just here</a>
+      <a id="link6" class="hide" href="#app">Just here</a>
       <!-- <a id="top" href="#app"><input type="hidden" /></a> -->
     </section>
 
@@ -100,36 +107,45 @@
         <h2>ESTIMATED CASE SCENARIOS IN <span id="mre"></span></h2>
         <hr />
         <p>Reported Cases Today: <br /><span id="mrc"></span></p>
+        <button>explain</button>
         <hr />
         <p>Infected Persons Today: <br /><span id="mci"></span></p>
+        <button>explain</button>
         <hr />
 
         <p>Infected Persons in <span class="pre"></span>
           <br /><span id="meip"></span></p>
+          <button>explain</button>
         <hr />
 
         <p>Severelly Infected Persons in <span class="pre"></span>
           <br /><span id="mesip"></span></p>
+          <button>explain</button>
         <hr />
 
         <p>Available Hospital beds in <span class="pre"></span>
           <br /><span id="meahb"></span></p>
+          <button>explain</button>
         <hr />
 
         <p>Infected Persons needing Intensive Care in <span class="pre"></span>
           <br /><span id="meipicu"></span></p>
+          <button>explain</button>
         <hr />
 
         <p>Infected Persons needing ventilators in <span class="pre"></span>
           <br /><span id="meipv"></span></p>
+          <button>explain</button>
         <hr />
 
         <p>Economic loss in USD each day in <span class="pre"></span>
           <br /><span id="meedl"></span></p>
+          <button>explain</button>
         <hr />
 
-        <p>Total Economic loss in <span class="pre"></span>
+        <p>Total Economic loss (USD) in <span class="pre"></span>
           <br /><span id="metel"></span></p>
+          <button>explain</button>
           <hr />
       </section>
 
@@ -137,36 +153,45 @@
         <h2>ESTIMATED SEVERE CASE SCENARIOS IN <span id="sre"></span></h2>
         <hr />
         <p>Reported Cases Today: <br /><span id="src"></span></p>
+        <button>explain</button>
         <hr />
         <p>Infected Persons Today: <br /><span id="sci"></span></p>
+        <button>explain</button>
         <hr />
 
         <p>Infected Persons in <span class="pre"></span>
           <br /><span id="seip"></span></p>
+          <button>explain</button>
         <hr />
 
         <p>Severelly Infected Persons in <span class="pre"></span>
           <br /><span id="sesip"></span></p>
+          <button>explain</button>
         <hr />
 
         <p>Available Hospital beds in <span class="pre"></span>
           <br /><span id="seahb"></span></p>
+          <button>explain</button>
         <hr />
 
         <p>Infected Persons needing Intensive Care in <span class="pre"></span>
           <br /><span id="seipicu"></span></p>
+          <button>explain</button>
         <hr />
 
         <p>Infected Persons needing ventilators in <span class="pre"></span>
           <br /><span id="seipv"></span></p>
+          <button>explain</button>
         <hr />
 
         <p>Economic loss in USD each day in <span class="pre"></span>
           <br /><span id="seedl"></span></p>
+          <button>explain</button>
         <hr />
 
-        <p>Total Economic loss in <span class="pre"></span>
+        <p>Total Economic loss (USD) in <span class="pre"></span>
           <br /><span id="setel"></span></p>
+          <button>explain</button>
           <hr />
       </section>
       
@@ -233,6 +258,7 @@
              placed to advise on what people in your area should be doing to protect themselves.</li>
         </ol>
       </section>
+      <hr id="hr" />
       <section id="result-explained">
         <p>The above estimation/projection is for the worst case 
           scenarios if we do not curtail the spread of the disease caused
