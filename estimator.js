@@ -614,7 +614,7 @@ for (let i = 0; i < tipsButtons.length; i++) {
   tipsButtons[i].addEventListener('click', (event) => {
     tipsSection.style.display = 'block';
     event.stopPropagation();
-    tipsDiv.innerHTML = tipsArray[i +1];
+    tipsDiv.innerHTML = tipsArray[i];
     // let link6 = document.querySelector('#link6');
     // link6.click();
     // if (i === 1) {
