@@ -585,7 +585,7 @@ let beds2, remainingBeds2 = outputData.severeImpact.hospitalBedsByRequestedTime;
    ' = ' + putCommas((outputData.severeImpact.dollarsInFlight * Number(inputData.timeToElapse))) + '.'
   ];
 const explanationBtns2 = document.querySelectorAll('#severe-result button');
-// const tipsSection2 = document.querySelector('#tips');
+const tipsSection2 = document.querySelector('#tips');
 // const tipsDiv2 = document.querySelector('#tips div');
 // const link6 = document.querySelector('#link6');
 for (let i = 0; i < explanationArray2.length; i++) {
@@ -600,24 +600,28 @@ for (let i = 0; i < explanationArray2.length; i++) {
 
 
 
+
+
+});
 const body = document.querySelector('body');
 const tipsButtons = document.querySelectorAll('.tips-btn');
+console.log(tipsButtons);
+console.log(38);
+const tipsSection = document.querySelector('#tips');
+const tipsDiv = document.querySelector('#tips div');
 for (let i = 0; i < tipsButtons.length; i++) {
+  console.log('clicked');
   tipsButtons[i].addEventListener('click', (event) => {
     tipsSection.style.display = 'block';
     event.stopPropagation();
-    tipsDiv.innerHTML = tipsArray[i];
-    let link6 = document.querySelector('#link6');
-    link6.click();
+    tipsDiv.innerHTML = tipsArray[i +1];
+    // let link6 = document.querySelector('#link6');
+    // link6.click();
     // if (i === 1) {
     //   tipsSection.innerHTML = link;
     // }
   })
 };
-});
-const link = document.createElement('a');
-link.setAttribute('href', 'https://www.worldometers.info/world-population/nigeria-population/');
-link.textContent = 'Nigerian population';
 const tipsArray = [
   '"Country/State/Region": This is the continent, country, state or any region \
   that you want to forecast the impact of corona virus for. \
