@@ -499,7 +499,7 @@ submitBtn.addEventListener('click', (e) => {
 const explanationBtns = document.querySelectorAll('#mild-result button');
 const tipsSection = document.querySelector('#tips');
 const tipsDiv = document.querySelector('#tips div');
-const link6 = document.querySelector('#link6');
+// const link6 = document.querySelector('#link6');
 for (let i = 0; i < explanationArray.length; i++) {
   explanationBtns[i].addEventListener('click', () => {
     tipsSection.style.display = 'block';
@@ -605,21 +605,15 @@ for (let i = 0; i < explanationArray2.length; i++) {
 });
 const body = document.querySelector('body');
 const tipsButtons = document.querySelectorAll('.tips-btn');
-console.log(tipsButtons);
-console.log(38);
+const inputs = document.querySelectorAll('input');
 const tipsSection = document.querySelector('#tips');
 const tipsDiv = document.querySelector('#tips div');
 for (let i = 0; i < tipsButtons.length; i++) {
-  console.log('clicked');
   tipsButtons[i].addEventListener('click', (event) => {
     tipsSection.style.display = 'block';
-    event.stopPropagation();
+    // event.stopPropagation();
     tipsDiv.innerHTML = tipsArray[i];
-    // let link6 = document.querySelector('#link6');
-    // link6.click();
-    // if (i === 1) {
-    //   tipsSection.innerHTML = link;
-    // }
+    
   })
 };
 const tipsArray = [
@@ -689,9 +683,6 @@ let remainingBeds, beds;
 // inputData = collectData();
 // console.log(inputData)
 // outputData = covid19ImpactEstimator(inputData);
-
-
-
 const tipsCloseBtn = document.querySelector('#tips span');
 tipsCloseBtn.addEventListener('click', () => {
   document.querySelector('#tips').style.display = 'none';
