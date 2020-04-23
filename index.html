@@ -35,54 +35,56 @@
         <div>
           <hr />
           <label id="cont-lbl" for="country">Country/State/Region: 
-            </label><span class="tips-btn">hint</span>
+            </label><span class="tips-btn">help</span>
           <span><sup>*</sup></span>
           <span id="country-valdn-msg"></span>
-          <input id="country" type="text" required />
+          <input id="country" placeholder="click here" type="text" required />
         </div>
         <div>
           <label for="pop">Population: </label>
-          <span class="tips-btn">hint</span>
-          <input id="pop" type="number" data-population />
+          <span class="tips-btn">help</span>
+          <input id="pop" type="number" placeholder="click here" ata-population />
         </div>
         <div>
           <label for="avg-daily-inc-usd">Average Daily Income (USD): </label>
-          <span class="tips-btn">hint</span>
-          <input id="avg-daily-inc-usd" type="number" />
+          <span class="tips-btn">help</span>
+          <input id="avg-daily-inc-usd" placeholder="click here" type="number" />
         </div>
         <div>
           <label id="label1" for="avg-daily-inc-pop">Give the USD above before this:</label>
-          <span class="tips-btn">hint</span>
+          <span class="tips-btn">help</span>
           <span id="percent-valdn-msg"></span>
-          <input id="avg-daily-inc-pop" type="number" min="1" max="100" />
+          <input id="avg-daily-inc-pop" placeholder="click here" type="number" min="1" max="100" />
         </div>
         <div>
-          <label for="avg-age">Average Age:</label><span class="tips-btn">hint</span>
-          <input id="avg-age" type="number" />
+          <label for="avg-age">Average Age:</label><span class="tips-btn">help</span>
+          <input id="avg-age" placeholder="click here" type="number" />
         </div>
         <div>
-          <label for="hosp-beds">Total Hospital Beds:</label><span class="tips-btn">hint</span>
-          <input id="hosp-beds" type="number" data-total-hospital-beds />
+          <label for="hosp-beds">Total Hospital Beds:</label><span class="tips-btn">help</span>
+          <input id="hosp-beds" placeholder="click here" type="number" data-total-hospital-beds />
         </div>
         <div>
-          <label for="reported-cases">Reported Cases:</label><span class="tips-btn">hint</span>
+          <label for="reported-cases">Reported Cases:</label><span class="tips-btn">help</span>
           <span><sup>*</sup></span>
           <span id="cases-valdn-msg"></span>
-          <input id="reported-cases" type="number" data-reported-cases required />
+          <input id="reported-cases" placeholder="click here" type="number" data-reported-cases required />
         </div>
         <div>
-          <label for="est-unit">Unit:</label><span class="tips-btn">hint</span>
+          <label for="est-unit">Unit:</label><span class="tips-btn">help</span>
           <select name="est-unit" id="est-unit" data-period-type>
             <option value="days">Days</option>
             <option value="weeks">Weeks</option>
             <option value="months">Months</option>
           </select>
         </div>
+        <hr id="after-select">
         <div>
-          <label id="label" for="unit-val"></label><span class="tips-btn">hint</span>
+          <label id="label" for="unit-val"></label><span class="tips-btn">help</span>
           <span><sup>*</sup></span>
           <span id="unit-valdn-msg"></span>
-          <input id="unit-val" type="number" data-time-to-elapse required />
+          <input id="unit-val" type="number" placeholder="click here"
+           data-time-to-elapse required />
         </div>
         <div>
           <input id="submit" type="submit" data-go-estimate value="RUN ESTIMATION" />
@@ -126,7 +128,7 @@
 
         <p>Available Hospital beds in <span class="pre"></span>
           <br /><span id="meahb"></span></p>
-          <button>explain</button>
+          <button id="hospital">explain</button>
         <hr />
 
         <p>Infected Persons needing Intensive Care in <span class="pre"></span>

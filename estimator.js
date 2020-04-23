@@ -176,6 +176,7 @@ estimationUnit.addEventListener('blur', () => {
 });
 estimationUnit.addEventListener('click', () => {
   completeValue();
+  estimationValue.click();
 });
 estimationUnit.addEventListener('keyup', () => {
   completeValue();
@@ -206,12 +207,12 @@ mildTabBtn.addEventListener('click', () => {
 severeTabBtn.addEventListener('click', () => {
   document.querySelector('[id="link5"]').click();
 });
-let options = estimationUnit.children;
-for (const option of options) {
-  option.addEventListener('click', () => {
-    completeValue();
-  });
-};
+// let options = estimationUnit.children;
+// for (const option of options) {
+//   option.addEventListener('click', () => {
+//     completeValue();
+//   });
+// };
 avgDI.addEventListener('keyup', () => {
   completeValue();
 });
@@ -441,6 +442,15 @@ submitBtn.addEventListener('click', (e) => {
     dailyDollarsLost = 'You need to fill the "Population" and the "Average \
     Daily Income (USD)" fields to be able to see this estimate.';
   }
+  let days,
+  pType = inputData.periodType;
+  if (pType === 'days') {
+    days = 1;
+  } else if (pType === 'weeks') {
+    days = 7;
+  } else {
+    days = 30;
+  }
   const explanationArray = [
   'This is simply the reported cases you provided \
   in the form input field for your region. You \
@@ -488,13 +498,14 @@ submitBtn.addEventListener('click', (e) => {
   'This represent the amount of dollars that ' + inputData.region.name.toUpperCase() +
   ' will be loosing because of COVID-19 every day from today till ' +
   putCommas(Number(inputData.timeToElapse)) + ' ' + inputData.periodType + ' of our forecast. This will amount to ' +
-   meedl.textContent + ' daily from tomorrow till ' + putCommas(Number(inputData.timeToElapse)) +
+   outputData.impact.dollarsInFlight + ' daily from tomorrow till ' + putCommas(Number(inputData.timeToElapse)) +
     ' ' + inputData.periodType + '.',
   'The total economic loss in USD represent the sum total \
   of the daily losses above this. That is the amount of money that the economy of \
   ' + inputData.region.name.toUpperCase() + ' will lose ' + inDaysTime + '. This is computed \
   to be: ' + putCommas(outputData.impact.dollarsInFlight) + ' × ' + putCommas(Number(inputData.timeToElapse)) +
-   ' = ' + putCommas((outputData.impact.dollarsInFlight * Number(inputData.timeToElapse))) + '.'
+  ' × ' + days +
+   ' = ' + putCommas((outputData.impact.dollarsInFlight * Number(inputData.timeToElapse)) * days) + '.'
   ];
 const explanationBtns = document.querySelectorAll('#mild-result button');
 const tipsSection = document.querySelector('#tips');
@@ -576,13 +587,13 @@ let beds2, remainingBeds2 = outputData.severeImpact.hospitalBedsByRequestedTime;
   'This represent the amount of dollars that ' + inputData.region.name.toUpperCase() +
   ' will be loosing because of COVID-19 every day from today till ' +
   putCommas(Number(inputData.timeToElapse)) + ' ' + inputData.periodType + ' of our forecast. This will amount to ' +
-   seedl.textContent + ' daily from tomorrow till ' + putCommas(Number(inputData.timeToElapse)) +
+   outputData.severeImpact.dollarsInFlight + ' daily from tomorrow till ' + putCommas(Number(inputData.timeToElapse)) +
     ' ' + inputData.periodType + '.',
   'The total economic loss in USD represent the sum total \
   of the daily losses above this. That is the amount of money that the economy of \
   ' + inputData.region.name.toUpperCase() + ' will lose ' + inDaysTime2 + '. This is computed \
   to be: ' + putCommas(outputData.severeImpact.dollarsInFlight) + ' × ' + putCommas(Number(inputData.timeToElapse)) +
-   ' = ' + putCommas((outputData.severeImpact.dollarsInFlight * Number(inputData.timeToElapse))) + '.'
+  ' × ' + days + ' = ' + putCommas((outputData.severeImpact.dollarsInFlight * Number(inputData.timeToElapse)) * days) + '.'
   ];
 const explanationBtns2 = document.querySelectorAll('#severe-result button');
 const tipsSection2 = document.querySelector('#tips');

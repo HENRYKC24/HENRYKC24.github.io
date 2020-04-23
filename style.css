@@ -117,13 +117,14 @@ input, select {
 }
 select {
   height: 32px;
-  width: 312px;
+  width: 90px;
   font-size: 20px;
   color: white;
 }
 select * {
   color: black;
 }
+
 input {
   padding: 4px;
   margin-right: 0px;
@@ -132,12 +133,40 @@ input {
   color: white;
   /* background-color: rgb(236, 204, 161); */
 }
-#est-unit, #est-unit option {
+
+::-webkit-input-placeholder {
+  color: peachpuff;
+  font-size: 13px;
+}
+::-moz-placeholder {
+  color: peachpuff;
+  font-size: 13px;
+}
+::-ms-input-placeholder {
+  color: peachpuff;
+  font-size: 13px;
+}
+::placeholder {
+  color: peachpuff;
+  font-size: 13px;
+}
+
+#est-unit option {
   border: 1px solid;
   border-width: 0px 0px 1px;
   margin-top: 5px;
   padding: 0px;
 }
+
+#est-unit {
+  border: none;
+}
+
+#after-select {
+  margin: 0;
+  margin-right: -5px;
+}
+
 div {
   margin-top: 10px;
 }
