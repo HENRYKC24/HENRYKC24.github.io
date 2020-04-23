@@ -173,13 +173,15 @@ avgDIP.addEventListener('click', () => {
 });
 estimationUnit.addEventListener('blur', () => {
   completeValue();
+  document.querySelector('#unit-val').focus();
 });
 estimationUnit.addEventListener('click', () => {
   completeValue();
-  estimationValue.click();
+  document.querySelector('#unit-val').focus();
 });
 estimationUnit.addEventListener('keyup', () => {
   completeValue();
+  document.querySelector('#unit-val').focus();
 });
 estimationValue.addEventListener('keyup', (event) => {
   let estValue = estimationValue.value;
