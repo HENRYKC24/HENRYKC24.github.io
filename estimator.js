@@ -171,14 +171,6 @@ avgDIP.addEventListener('click', () => {
     avgDI.focus();
   }
 });
-let options = estimationUnit.children;
-console.log(options);
-for (let i = 0; i < options.length; i++) {
-  options[i].addEventListener('click', () => {
-    console.log('You clicked an option')
-    document.querySelector('#unit-val').focus();
-  });
-};
 estimationUnit.addEventListener('blur', () => {
   completeValue();
 });
@@ -186,6 +178,9 @@ estimationUnit.addEventListener('click', () => {
   completeValue();
 });
 estimationUnit.addEventListener('keyup', () => {
+  completeValue();
+});
+estimationUnit.addEventListener('touchstart', () => {
   completeValue();
 });
 estimationValue.addEventListener('keyup', (event) => {
