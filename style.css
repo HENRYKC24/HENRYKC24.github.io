@@ -293,6 +293,11 @@ ol {
   color: white;
   padding: 3px;
 }
+
+#advice li {
+  margin-bottom: 15px;
+}
+
 #hr {
   margin: 0px;
   padding: 0px;
